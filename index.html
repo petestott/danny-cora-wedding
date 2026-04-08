@@ -166,6 +166,51 @@
       color: var(--text-mid);
     }
 
+    /* ─── ADDRESS SECTION ─── */
+    .address-section {
+      animation: fadeUp 0.8s 0.22s ease both;
+      margin-bottom: 0;
+    }
+
+    .address-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: linear-gradient(135deg, #fdf0f3 0%, #fef6ee 100%);
+      border: 1px solid rgba(199, 79, 104, 0.25);
+      border-radius: 14px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .address-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--blush), var(--rose));
+      opacity: 0;
+      transition: opacity 0.18s ease;
+    }
+
+    @media (hover: hover) {
+      .address-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px var(--card-shadow);
+      }
+      .address-card:hover::before { opacity: 1; }
+      .address-card:hover .card-arrow { transform: translateX(4px); opacity: 1; }
+    }
+
+    .address-card:active {
+      transform: scale(0.99);
+    }
+
     /* ─── REGISTRY ─── */
     .registry-section {
       animation: fadeUp 0.8s 0.22s ease both;
@@ -370,6 +415,23 @@
       <p>We're so grateful you're celebrating with us. Your presence is the greatest gift of all — but if you'd like to give something more, we've put together a few options below.</p>
       <div class="divider"><div class="divider-gem"></div></div>
     </section>
+
+    <!-- ── ADDRESS COLLECTION ── -->
+    <section class="address-section">
+      <h2 class="registry-heading">Receive an Announcement</h2>
+      <a class="address-card"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSfFhyXSJwx296kuz8wG47V0ovw7aG-H8Rhth9_A1uc7uH7hZw/viewform"
+         target="_blank" rel="noopener noreferrer">
+        <div class="card-icon">✉️</div>
+        <div class="card-content">
+          <p class="card-label">Share your address</p>
+          <p class="card-name">Fill out our form</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+    </section>
+
+    <div class="divider"><div class="divider-gem"></div></div>
 
     <!-- ── REGISTRY LINKS ── -->
     <section class="registry-section">
